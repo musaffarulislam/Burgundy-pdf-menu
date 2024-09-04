@@ -17,8 +17,7 @@ const Form = () => {
     if (accessToken) {
       navigate("/menu")
     }
-  }, [accessToken]);
-
+  }, [accessToken])
 
   return (
     <div className="w-full">
