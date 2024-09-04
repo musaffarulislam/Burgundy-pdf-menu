@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
         >
           {Array.from(
             new Array(numPages),
-            (el, index) => (
+            (_, index) => (
               <Page 
                 key={`page_${index + 1}`} 
                 pageNumber={index + 1} 
@@ -45,48 +45,3 @@ const Menu: React.FC = () => {
 }
 
 export default Menu;
-
-
-
-
-// import React, { useState } from 'react';
-// import { Document, Page, pdfjs } from 'react-pdf';
-// import menuList from "./menu-list.pdf";
-
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-//   'pdfjs-dist/build/pdf.worker.min.mjs',
-//   import.meta.url,
-// ).toString();
-
-// const Menu = () => {
-//   const [numPages, setNumPages] = useState(null);
-
-//   const onDocumentLoadSuccess = ({ numPages }) => {
-//     setNumPages(numPages);
-//   };
-
-//   return (
-//     <div className="h-screen flex justify-center overflow-auto">
-//       <div className="w-full flex flex-col items-center max-w-[600px]">
-//         <Document 
-//           file={menuList}
-//           onLoadSuccess={onDocumentLoadSuccess}
-//         >
-//           {Array.from(
-//             new Array(numPages),
-//             (el, index) => (
-//               <Page 
-//                 key={`page_${index + 1}`} 
-//                 pageNumber={index + 1} 
-//                 renderTextLayer={false}
-//                 renderAnnotationLayer={false}
-//               />
-//             )
-//           )}
-//         </Document>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Menu;
